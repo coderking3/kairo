@@ -1,0 +1,63 @@
+{
+  "name": "@king-3/kairo",
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.33.2",
+  "description": "Lightweight reactive UI framework",
+  "author": "king3 <king3.wm@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/coderking3/kairo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coderking3/kairo"
+  },
+  "bugs": {
+    "url": "https://github.com/coderking3/kairo/issues"
+  },
+  "keywords": [
+    "ui",
+    "framework",
+    "reactive",
+    "lightweight"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./jsx-runtime": {
+      "types": "./dist/jsx-runtime.d.ts",
+      "import": "./dist/jsx-runtime.mjs",
+      "require": "./dist/jsx-runtime.cjs"
+    },
+    "./jsx-dev-runtime": {
+      "types": "./dist/jsx-dev-runtime.d.ts",
+      "import": "./dist/jsx-dev-runtime.mjs",
+      "require": "./dist/jsx-dev-runtime.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "obuild --watch",
+    "build": "obuild",
+    "format": "prettier --write .",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build",
+    "release": "bumpp"
+  },
+  "devDependencies": {
+    "@king-3/eslint-config": "^6.0.1",
+    "@king-3/prettier-config": "^3.4.0",
+    "@types/node": "^25.6.0",
+    "bumpp": "^11.0.1",
+    "eslint": "^10.2.1",
+    "obuild": "^0.4.33",
+    "prettier": "^3.8.3",
+    "typescript": "^5.7.0"
+  }
+}
